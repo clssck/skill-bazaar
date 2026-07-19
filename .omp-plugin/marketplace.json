@@ -13,6 +13,7 @@
       "source": {
         "source": "github",
         "repo": "emilkowalski/skills",
+        "ref": "main",
         "sha": "6bf24434f7730ad169077756cf9c7cd7bd675fc6"
       },
       "description": "Design engineering and animation skills by Emil Kowalski",
@@ -23,6 +24,32 @@
         "animation",
         "design-engineering",
         "ui"
+      ]
+    },
+    {
+      "name": "improve",
+      "version": "1.0.1781504319",
+      "source": {
+        "source": "github",
+        "repo": "shadcn/improve",
+        "ref": "main",
+        "sha": "03369ee6d7cafbfcecc4346539b05b3dc0a603bb"
+      },
+      "description": "Point it at a codebase and it figures out what's worth doing — bugs, perf, tech debt, what to build next — then writes plans any agent can execute. It can hand the work to a cheaper model and review the result. It never edits your code.",
+      "author": {
+        "name": "shadcn"
+      },
+      "homepage": "https://github.com/shadcn/improve",
+      "repository": "https://github.com/shadcn/improve",
+      "license": "MIT",
+      "category": "development",
+      "tags": [
+        "audit",
+        "code-review",
+        "planning",
+        "agents",
+        "tech-debt",
+        "security"
       ]
     }
   ]
