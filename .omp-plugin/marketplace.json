@@ -4,7 +4,7 @@
     "name": "clssck"
   },
   "metadata": {
-    "description": "A curated OMP skill bazaar: original wares and responsibly sourced oddities"
+    "description": "A curated OMP bazaar linking skills straight from their makers"
   },
   "plugins": [
     {
@@ -23,23 +23,6 @@
         "animation",
         "design-engineering",
         "ui"
-      ]
-    },
-    {
-      "name": "visual-code-reviewer",
-      "version": "2.2.1",
-      "source": "./plugins/visual-code-reviewer",
-      "description": "Interactive visual review canvases for pull requests, diffs, and guided code tours",
-      "author": {
-        "name": "Alex Brinsmead"
-      },
-      "repository": "https://github.com/abrinsmead/skills/tree/main/visual-code-reviewer",
-      "license": "MIT",
-      "category": "development",
-      "tags": [
-        "code-review",
-        "visualization",
-        "mermaid"
       ]
     }
   ]
