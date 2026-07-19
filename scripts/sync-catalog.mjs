@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcesPath = resolve(root, "sources.json");
 const catalogPath = resolve(root, ".omp-plugin/marketplace.json");
+const readmePath = resolve(root, "README.md");
 const token = process.env.GITHUB_TOKEN;
 const headers = {
   Accept: "application/vnd.github+json",
@@ -17,6 +18,8 @@ const headers = {
 const repositoryCache = new Map();
 const contextCache = new Map();
 const blobCache = new Map();
+const lastCommitCache = new Map();
+const skillRecords = [];
 
 async function githubJson(path, optional = false) {
   const response = await fetch(`https://api.github.com${path}`, { headers });
@@ -251,13 +254,15 @@ async function importMarketplace(context, marketplace) {
     const manifest = await pluginManifest(target.context, target.subdirectory);
     const name = entry.name ?? manifest?.name;
     if (!name) throw new Error(`Marketplace entry in ${context.repo} has no plugin name`);
-    plugins.push({
+    const plugin = {
       name,
       version: resolveVersion(entry.version ?? manifest?.version ?? "1.0.0", target.context, previousEntryFor(name, target.context, target.subdirectory)),
       source: catalogSource(target.context, target.subdirectory),
       ...(entry.skills === undefined ? {} : { skills: entry.skills }),
       ...pluginMetadata({ entry, manifest, context: target.context }),
-    });
+    };
+    plugins.push(plugin);
+    await recordPluginSkills(plugin, target.context, target.subdirectory, manifest, entry.skills);
   }
   return plugins;
 }
@@ -267,16 +272,44 @@ function declaredSkillPaths(manifest) {
   return Array.isArray(manifest?.skills) ? manifest.skills.filter(value => typeof value === "string") : [];
 }
 
+function pathIsInside(path, directory) {
+  return directory === "" || path === directory || path.startsWith(`${directory}/`);
+}
+
+async function recordPluginSkills(plugin, context, subdirectory = "", manifest = null, explicitSkills) {
+  const roots = new Set([posix.join(subdirectory, "skills")]);
+  const declared = explicitSkills === undefined
+    ? declaredSkillPaths(manifest)
+    : typeof explicitSkills === "string"
+      ? [explicitSkills]
+      : explicitSkills;
+  for (const path of declared ?? []) {
+    const relative = path.replace(/^\.\//, "");
+    roots.add(relative === "." ? subdirectory : posix.normalize(posix.join(subdirectory, relative)));
+  }
+
+  const seen = new Set();
+  for (const entry of context.files.filter(file => /(^|\/)SKILL\.md$/.test(file.path))) {
+    if (![...roots].some(directory => pathIsInside(entry.path, directory)) || seen.has(entry.path)) continue;
+    seen.add(entry.path);
+    const fallback = posix.basename(posix.dirname(entry.path));
+    const frontmatter = parseSkillFrontmatter((await readBlob(context, entry.sha)).toString("utf8"), fallback);
+    skillRecords.push({ plugin, context, skillPath: entry.path, name: frontmatter.name });
+  }
+}
+
 async function directRepositoryPlugin(context) {
   const manifest = await pluginManifest(context);
   const [owner, repoName] = context.repo.split("/");
   const name = slug(manifest?.name ?? `${owner}-${repoName}`);
-  return {
+  const plugin = {
     name,
     version: resolveVersion(manifest?.version ?? "1.0.0", context, previousEntryFor(name, context)),
     source: catalogSource(context),
     ...pluginMetadata({ manifest, context }),
   };
+  await recordPluginSkills(plugin, context, "", manifest);
+  return plugin;
 }
 
 function parseSkillFrontmatter(content, fallback) {
@@ -301,16 +334,98 @@ async function standaloneRepositoryPlugins(context) {
     const directory = posix.dirname(entry.path) === "." ? "" : posix.dirname(entry.path);
     const fallback = directory ? posix.basename(directory) : context.repo.split("/")[1];
     const frontmatter = parseSkillFrontmatter((await readBlob(context, entry.sha)).toString("utf8"), fallback);
-    plugins.push({
+    const plugin = {
       name: frontmatter.name,
       version: resolveVersion("1.0.0", context, previousEntryFor(frontmatter.name, context, directory)),
       source: catalogSource(context, directory),
       skills: ".",
       ...pluginMetadata({ context, category: "standalone-skill", description: frontmatter.description }),
       tags: ["github-skills", "standalone-skill"],
-    });
+    };
+    plugins.push(plugin);
+    skillRecords.push({ plugin, context, skillPath: entry.path, name: frontmatter.name });
   }
   return plugins;
+}
+
+async function lastCommitForSkill({ context, skillPath }) {
+  const directory = posix.dirname(skillPath) === "." ? "" : posix.dirname(skillPath);
+  const key = `${context.repo}@${context.sha}:${directory}`;
+  if (!lastCommitCache.has(key)) {
+    lastCommitCache.set(key, (async () => {
+      const query = new URLSearchParams({ sha: context.sha, per_page: "1" });
+      if (directory) query.set("path", directory);
+      const commits = await githubJson(`/repos/${context.repo}/commits?${query}`);
+      const commit = commits[0];
+      return commit
+        ? {
+            sha: commit.sha,
+            date: commit.commit.committer?.date ?? commit.commit.author?.date,
+          }
+        : { sha: context.sha, date: context.committedAt };
+    })());
+  }
+  return lastCommitCache.get(key);
+}
+
+function formatUtc(value) {
+  return `${new Date(value).toISOString().slice(0, 16).replace("T", " ")} UTC`;
+}
+
+function renderReadme(sources, rows) {
+  const lines = [
+    "<!-- Generated by scripts/sync-catalog.mjs. Do not edit manually. -->",
+    "",
+    "# Skill Bazaar",
+    "",
+    sources.marketplace.description,
+    "",
+    "This marketplace links GitHub-hosted skills directly from their owners, pins immutable commits, and regenerates this index daily.",
+    "",
+    "## Install",
+    "",
+    "```bash",
+    "omp plugin marketplace add clssck/skill-bazaar",
+    "omp plugin marketplace update clssck-skills",
+    "```",
+    "",
+    "## Available skills",
+    "",
+    `${rows.length} skills across ${new Set(rows.map(row => row.plugin.name)).size} plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the catalog's pinned commit.`,
+    "",
+    "| Skill | Plugin | Repository | Last updated | Install |",
+    "| --- | --- | --- | --- | --- |",
+  ];
+
+  for (const row of rows) {
+    const skillUrl = `https://github.com/${row.context.repo}/blob/${row.context.sha}/${row.skillPath}`;
+    const commitUrl = `https://github.com/${row.context.repo}/commit/${row.lastCommit.sha}`;
+    lines.push(
+      `| [${row.name}](${skillUrl}) | \`${row.plugin.name}\` | [${row.context.repo}](${row.context.metadata.html_url}) | [${formatUtc(row.lastCommit.date)}](${commitUrl}) | \`omp plugin install ${row.plugin.name}@${sources.marketplace.name}\` |`,
+    );
+  }
+
+  lines.push(
+    "",
+    "## Tracked repositories",
+    "",
+    ...sources.repositories.map(repository => {
+      const repo = parseGitHubRepository(repository);
+      return `- [${repo}](https://github.com/${repo})`;
+    }),
+    "",
+    "## Add a GitHub skill",
+    "",
+    "Add its repository URL to [`sources.json`](./sources.json). The resolver accepts upstream marketplaces, conventional `skills/<name>/SKILL.md` repositories, and standalone `SKILL.md` directories.",
+    "",
+    "The scheduled workflow refreshes upstream commits once per day. To publish a new source immediately, run:",
+    "",
+    "```bash",
+    "gh workflow run sync-upstreams.yml --repo clssck/skill-bazaar --ref main",
+    "```",
+    "",
+  );
+  return lines.join("\n");
 }
 
 const sources = JSON.parse(await readFile(sourcesPath, "utf8"));
@@ -352,6 +467,14 @@ for (const plugin of plugins.filter(plugin => nameCounts.get(plugin.name) > 1)) 
   usedNames.add(candidate);
 }
 
+const readmeRows = await Promise.all(
+  skillRecords.map(async record => ({ ...record, lastCommit: await lastCommitForSkill(record) })),
+);
+readmeRows.sort((left, right) => {
+  if (left.name !== right.name) return left.name < right.name ? -1 : 1;
+  return left.plugin.name < right.plugin.name ? -1 : left.plugin.name > right.plugin.name ? 1 : 0;
+});
+
 const catalog = {
   name: sources.marketplace.name,
   owner: sources.marketplace.owner,
@@ -365,4 +488,13 @@ if (current === rendered) {
 } else {
   await writeFile(catalogPath, rendered);
   console.log(`Updated ${catalogPath}`);
+}
+
+const readme = `${renderReadme(sources, readmeRows)}\n`;
+const currentReadme = await readFile(readmePath, "utf8").catch(() => "");
+if (currentReadme === readme) {
+  console.log("README skill index is current.");
+} else {
+  await writeFile(readmePath, readme);
+  console.log(`Updated ${readmePath}`);
 }
