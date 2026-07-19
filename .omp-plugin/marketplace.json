@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "emil-design-skills",
+      "name": "emilkowalski-skills",
       "version": "1.0.0",
       "source": {
         "source": "github",
@@ -16,15 +16,12 @@
         "ref": "main",
         "sha": "6bf24434f7730ad169077756cf9c7cd7bd675fc6"
       },
-      "description": "Design engineering and animation skills by Emil Kowalski",
+      "description": "Skills for Design Engineers.",
+      "author": {
+        "name": "emilkowalski"
+      },
       "repository": "https://github.com/emilkowalski/skills",
-      "license": "MIT",
-      "category": "design",
-      "tags": [
-        "animation",
-        "design-engineering",
-        "ui"
-      ]
+      "license": "MIT"
     },
     {
       "name": "improve",
@@ -42,7 +39,6 @@
       "homepage": "https://github.com/shadcn/improve",
       "repository": "https://github.com/shadcn/improve",
       "license": "MIT",
-      "category": "development",
       "tags": [
         "audit",
         "code-review",
@@ -50,6 +46,50 @@
         "agents",
         "tech-debt",
         "security"
+      ]
+    },
+    {
+      "name": "mermaid-viewer",
+      "version": "1.0.1783523420",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/abrinsmead/skills.git",
+        "path": "mermaid-viewer",
+        "ref": "main",
+        "sha": "b543d21bf249a4fe504a90a63e39c51005afbf15"
+      },
+      "skills": ".",
+      "description": "Render Mermaid diagrams into a self-contained interactive HTML viewer with pan/zoom, light/dark theme, PNG/SVG export, and source view. Use when the user asks to \"diagram this\", \"visualize\", \"show the architecture\", asks for a flowchart, swimlane, sequence diagram, state machine, ERD, mindmap, sankey, gantt, timeline, class diagram, or any other diagram, or provides Mermaid source to render.",
+      "author": {
+        "name": "abrinsmead"
+      },
+      "repository": "https://github.com/abrinsmead/skills",
+      "category": "standalone-skill",
+      "tags": [
+        "github-skills",
+        "standalone-skill"
+      ]
+    },
+    {
+      "name": "visual-code-reviewer",
+      "version": "1.0.1783523420",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/abrinsmead/skills.git",
+        "path": "visual-code-reviewer",
+        "ref": "main",
+        "sha": "b543d21bf249a4fe504a90a63e39c51005afbf15"
+      },
+      "skills": ".",
+      "description": "Turn a PR, branch, or diff into an interactive visual review canvas — or existing code into a guided visual tour. Draggable cards for changesets, diffs, source excerpts, mermaid diagrams, explainer notes, callouts, screenshots, and P0/P1/P2 warnings, connected by labeled edges on a pan/zoom canvas with a review explorer. Use when the user asks to \"review this PR visually\", wants a \"visual review\" or \"review canvas\", says \"walk me through this diff/PR\", asks to explain a change/branch/PR visually — or asks to \"explain this codebase/module visually\", \"give me a code tour\", or \"show me how this code works\".",
+      "author": {
+        "name": "abrinsmead"
+      },
+      "repository": "https://github.com/abrinsmead/skills",
+      "category": "standalone-skill",
+      "tags": [
+        "github-skills",
+        "standalone-skill"
       ]
     }
   ]

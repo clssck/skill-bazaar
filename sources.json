@@ -6,28 +6,9 @@
     },
     "description": "A curated OMP bazaar linking skills straight from their makers"
   },
-  "plugins": [
-    {
-      "name": "emil-design-skills",
-      "repo": "emilkowalski/skills",
-      "ref": "main",
-      "baseVersion": "1.0.0",
-      "description": "Design engineering and animation skills by Emil Kowalski",
-      "repository": "https://github.com/emilkowalski/skills",
-      "license": "MIT",
-      "category": "design",
-      "tags": [
-        "animation",
-        "design-engineering",
-        "ui"
-      ]
-    },
-    {
-      "name": "improve",
-      "repo": "shadcn/improve",
-      "ref": "main",
-      "manifest": ".claude-plugin/plugin.json",
-      "category": "development"
-    }
+  "repositories": [
+    "https://github.com/emilkowalski/skills",
+    "https://github.com/shadcn/improve",
+    "https://github.com/abrinsmead/skills"
   ]
 }

@@ -1,4 +1,4 @@
-name: Sync creator skills
+name: Sync GitHub skills
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: sync-creator-skills
+  group: sync-github-skills
   cancel-in-progress: true
 
 permissions:
@@ -20,20 +20,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Resolve creator repositories
+      - name: Resolve GitHub skill repositories
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/sync-catalog.mjs
 
-      - name: Publish resolved creator versions
+      - name: Publish resolved skill links
         run: |
           if git diff --quiet -- .omp-plugin/marketplace.json; then
-            echo "Creator pins are current."
+            echo "GitHub skill links are current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .omp-plugin/marketplace.json
-          git commit -m "Update creator skill pins"
+          git commit -m "Update GitHub skill links"
           git push
