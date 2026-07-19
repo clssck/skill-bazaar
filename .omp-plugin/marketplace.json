@@ -91,6 +91,31 @@
         "github-skills",
         "standalone-skill"
       ]
+    },
+    {
+      "name": "lavish-axi",
+      "version": "0.1.1784062430",
+      "source": {
+        "source": "github",
+        "repo": "kunchenguid/lavish-axi",
+        "ref": "main",
+        "sha": "55045850f61e7b23c8dbf8cc30d92bd6e31649d2"
+      },
+      "description": "HTML is the new markdown. Lavish is the new editor for your HTML artifacts.",
+      "author": {
+        "name": "kunchenguid"
+      },
+      "homepage": "https://github.com/kunchenguid/lavish-axi#readme",
+      "repository": "git+https://github.com/kunchenguid/lavish-axi.git",
+      "license": "MIT",
+      "tags": [
+        "axi",
+        "agent",
+        "cli",
+        "html",
+        "review",
+        "collaboration"
+      ]
     }
   ]
 }
