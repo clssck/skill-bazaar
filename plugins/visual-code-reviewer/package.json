@@ -1,0 +1,17 @@
+{
+  "name": "@clssck/visual-code-reviewer",
+  "version": "2.2.0",
+  "private": true,
+  "description": "Interactive visual review canvases for pull requests, diffs, and guided code tours",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clssck/skill-bazaar.git",
+    "directory": "plugins/visual-code-reviewer"
+  },
+  "omp": {
+    "name": "visual-code-reviewer",
+    "version": "2.2.0",
+    "description": "Interactive visual review canvases for pull requests, diffs, and guided code tours"
+  }
+}

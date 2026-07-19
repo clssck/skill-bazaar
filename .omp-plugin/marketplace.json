@@ -1,0 +1,46 @@
+{
+  "name": "clssck-skills",
+  "owner": {
+    "name": "clssck"
+  },
+  "metadata": {
+    "description": "A curated OMP skill bazaar: original wares and responsibly sourced oddities"
+  },
+  "plugins": [
+    {
+      "name": "emil-design-skills",
+      "version": "1.0.0",
+      "source": {
+        "source": "github",
+        "repo": "emilkowalski/skills",
+        "sha": "6bf24434f7730ad169077756cf9c7cd7bd675fc6"
+      },
+      "description": "Design engineering and animation skills by Emil Kowalski",
+      "repository": "https://github.com/emilkowalski/skills",
+      "license": "MIT",
+      "category": "design",
+      "tags": [
+        "animation",
+        "design-engineering",
+        "ui"
+      ]
+    },
+    {
+      "name": "visual-code-reviewer",
+      "version": "2.2.0",
+      "source": "./plugins/visual-code-reviewer",
+      "description": "Interactive visual review canvases for pull requests, diffs, and guided code tours",
+      "author": {
+        "name": "Alex Brinsmead"
+      },
+      "repository": "https://github.com/abrinsmead/skills/tree/main/visual-code-reviewer",
+      "license": "MIT",
+      "category": "development",
+      "tags": [
+        "code-review",
+        "visualization",
+        "mermaid"
+      ]
+    }
+  ]
+}
