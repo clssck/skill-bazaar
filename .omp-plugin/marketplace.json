@@ -27,7 +27,7 @@
     },
     {
       "name": "visual-code-reviewer",
-      "version": "2.2.0",
+      "version": "2.2.1",
       "source": "./plugins/visual-code-reviewer",
       "description": "Interactive visual review canvases for pull requests, diffs, and guided code tours",
       "author": {
