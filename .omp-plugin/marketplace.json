@@ -116,6 +116,28 @@
         "review",
         "collaboration"
       ]
+    },
+    {
+      "name": "bro",
+      "version": "1.0.1784583659",
+      "source": {
+        "source": "github",
+        "repo": "clssck/bro",
+        "ref": "main",
+        "sha": "41d86da87ba68b2657ad040c9580f6e2b5dba802"
+      },
+      "description": "Restate the assistant's previous response in plain, concise language.",
+      "author": {
+        "name": "clssck"
+      },
+      "homepage": "https://github.com/clssck/bro",
+      "repository": "https://github.com/clssck/bro",
+      "license": "MIT",
+      "tags": [
+        "plain-language",
+        "rewrite",
+        "command"
+      ]
     }
   ]
 }

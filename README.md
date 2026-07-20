@@ -15,12 +15,13 @@ omp plugin marketplace update clssck-skills
 
 ## Available skills
 
-10 skills across 5 plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the catalog's pinned commit.
+11 skills across 6 plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the catalog's pinned commit.
 
 | Skill | Plugin | Repository | Last updated | Install |
 | --- | --- | --- | --- | --- |
 | [animation-vocabulary](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/animation-vocabulary/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-06-29 12:29 UTC](https://github.com/emilkowalski/skills/commit/107aeda7d9886d25bb812097a30a05bda3e5a92f) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [apple-design](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/apple-design/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-09 11:29 UTC](https://github.com/emilkowalski/skills/commit/56de6f5d6642f761b5e17629fccf53e303b3da9b) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [bro](https://github.com/clssck/bro/blob/41d86da87ba68b2657ad040c9580f6e2b5dba802/skills/bro/SKILL.md) | `bro` | [clssck/bro](https://github.com/clssck/bro) | [2026-07-20 21:40 UTC](https://github.com/clssck/bro/commit/41d86da87ba68b2657ad040c9580f6e2b5dba802) | `omp plugin install bro@clssck-skills` |
 | [emil-design-eng](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/emil-design-eng/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-03-25 14:59 UTC](https://github.com/emilkowalski/skills/commit/ecf66bbd1fb33c25332b6b0e454d08049978284c) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [find-animation-opportunities](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/find-animation-opportunities/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-15 14:44 UTC](https://github.com/emilkowalski/skills/commit/d62b0d8f9a8eb795a512b76239bb873ab9ac7cd5) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [improve](https://github.com/shadcn/improve/blob/03369ee6d7cafbfcecc4346539b05b3dc0a603bb/skills/improve/SKILL.md) | `improve` | [shadcn/improve](https://github.com/shadcn/improve) | [2026-06-15 06:15 UTC](https://github.com/shadcn/improve/commit/bd0aff9ca6b5f195ad3dca54a96e3368c65dab67) | `omp plugin install improve@clssck-skills` |
@@ -36,6 +37,7 @@ omp plugin marketplace update clssck-skills
 - [shadcn/improve](https://github.com/shadcn/improve)
 - [abrinsmead/skills](https://github.com/abrinsmead/skills)
 - [kunchenguid/lavish-axi](https://github.com/kunchenguid/lavish-axi)
+- [clssck/bro](https://github.com/clssck/bro)
 
 ## Add a GitHub skill
 
