@@ -4,7 +4,7 @@
 
 A curated OMP bazaar linking skills straight from their makers
 
-This marketplace links GitHub-hosted skills directly from their owners, pins immutable commits, and regenerates this index daily.
+This marketplace hosts its own small plugins and links external skills directly from their owners. External sources are pinned to immutable commits, and this index is regenerated daily.
 
 ## Install
 
@@ -15,20 +15,21 @@ omp plugin marketplace update clssck-skills
 
 ## Available skills
 
-11 skills across 6 plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the catalog's pinned commit.
+12 skills across 6 plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the source commit used to build the catalog.
 
 | Skill | Plugin | Repository | Last updated | Install |
 | --- | --- | --- | --- | --- |
-| [animation-vocabulary](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/animation-vocabulary/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-06-29 12:29 UTC](https://github.com/emilkowalski/skills/commit/107aeda7d9886d25bb812097a30a05bda3e5a92f) | `omp plugin install emilkowalski-skills@clssck-skills` |
-| [apple-design](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/apple-design/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-09 11:29 UTC](https://github.com/emilkowalski/skills/commit/56de6f5d6642f761b5e17629fccf53e303b3da9b) | `omp plugin install emilkowalski-skills@clssck-skills` |
-| [bro](https://github.com/clssck/bro/blob/41d86da87ba68b2657ad040c9580f6e2b5dba802/skills/bro/SKILL.md) | `bro` | [clssck/bro](https://github.com/clssck/bro) | [2026-07-20 21:40 UTC](https://github.com/clssck/bro/commit/41d86da87ba68b2657ad040c9580f6e2b5dba802) | `omp plugin install bro@clssck-skills` |
-| [emil-design-eng](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/emil-design-eng/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-03-25 14:59 UTC](https://github.com/emilkowalski/skills/commit/ecf66bbd1fb33c25332b6b0e454d08049978284c) | `omp plugin install emilkowalski-skills@clssck-skills` |
-| [find-animation-opportunities](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/find-animation-opportunities/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-15 14:44 UTC](https://github.com/emilkowalski/skills/commit/d62b0d8f9a8eb795a512b76239bb873ab9ac7cd5) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [animation-vocabulary](https://github.com/emilkowalski/skills/blob/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb/skills/animation-vocabulary/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-06-29 12:29 UTC](https://github.com/emilkowalski/skills/commit/107aeda7d9886d25bb812097a30a05bda3e5a92f) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [apple-design](https://github.com/emilkowalski/skills/blob/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb/skills/apple-design/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-09 11:29 UTC](https://github.com/emilkowalski/skills/commit/56de6f5d6642f761b5e17629fccf53e303b3da9b) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [bro](https://github.com/clssck/skill-bazaar/blob/b59f73383a29c0fb6d12a6f56349dfc9fc1242c0/plugins/bro/skills/bro/SKILL.md) | `bro` | [clssck/skill-bazaar](https://github.com/clssck/skill-bazaar) | [2026-07-21 16:33 UTC](https://github.com/clssck/skill-bazaar/commit/b59f73383a29c0fb6d12a6f56349dfc9fc1242c0) | `omp plugin install bro@clssck-skills` |
+| [emil-design-eng](https://github.com/emilkowalski/skills/blob/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb/skills/emil-design-eng/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 10:44 UTC](https://github.com/emilkowalski/skills/commit/86cf9f7d91c6de0215cbb2e36fccfe6c8127a841) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [find-animation-opportunities](https://github.com/emilkowalski/skills/blob/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb/skills/find-animation-opportunities/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 10:44 UTC](https://github.com/emilkowalski/skills/commit/86cf9f7d91c6de0215cbb2e36fccfe6c8127a841) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [improve](https://github.com/shadcn/improve/blob/03369ee6d7cafbfcecc4346539b05b3dc0a603bb/skills/improve/SKILL.md) | `improve` | [shadcn/improve](https://github.com/shadcn/improve) | [2026-06-15 06:15 UTC](https://github.com/shadcn/improve/commit/bd0aff9ca6b5f195ad3dca54a96e3368c65dab67) | `omp plugin install improve@clssck-skills` |
-| [improve-animations](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/improve-animations/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-11 12:43 UTC](https://github.com/emilkowalski/skills/commit/f736679c420f34e5a63d2dfdc74db35520d75a7b) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [improve-animations](https://github.com/emilkowalski/skills/blob/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb/skills/improve-animations/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 10:44 UTC](https://github.com/emilkowalski/skills/commit/86cf9f7d91c6de0215cbb2e36fccfe6c8127a841) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [lavish](https://github.com/kunchenguid/lavish-axi/blob/50a54774b1dfcaa96fce46765e6b156b5a8eab1d/skills/lavish/SKILL.md) | `lavish-axi` | [kunchenguid/lavish-axi](https://github.com/kunchenguid/lavish-axi) | [2026-07-14 20:53 UTC](https://github.com/kunchenguid/lavish-axi/commit/55045850f61e7b23c8dbf8cc30d92bd6e31649d2) | `omp plugin install lavish-axi@clssck-skills` |
 | [mermaid-viewer](https://github.com/abrinsmead/skills/blob/b543d21bf249a4fe504a90a63e39c51005afbf15/mermaid-viewer/SKILL.md) | `mermaid-viewer` | [abrinsmead/skills](https://github.com/abrinsmead/skills) | [2026-07-06 00:41 UTC](https://github.com/abrinsmead/skills/commit/384051e3a69737c4477f0e92fb20cc19d05a8e35) | `omp plugin install mermaid-viewer@clssck-skills` |
-| [review-animations](https://github.com/emilkowalski/skills/blob/6bf24434f7730ad169077756cf9c7cd7bd675fc6/skills/review-animations/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-11 12:43 UTC](https://github.com/emilkowalski/skills/commit/f736679c420f34e5a63d2dfdc74db35520d75a7b) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [pick-ui-library](https://github.com/emilkowalski/skills/blob/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb/skills/pick-ui-library/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 11:44 UTC](https://github.com/emilkowalski/skills/commit/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb) | `omp plugin install emilkowalski-skills@clssck-skills` |
+| [review-animations](https://github.com/emilkowalski/skills/blob/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb/skills/review-animations/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 10:44 UTC](https://github.com/emilkowalski/skills/commit/86cf9f7d91c6de0215cbb2e36fccfe6c8127a841) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [visual-code-reviewer](https://github.com/abrinsmead/skills/blob/b543d21bf249a4fe504a90a63e39c51005afbf15/visual-code-reviewer/SKILL.md) | `visual-code-reviewer` | [abrinsmead/skills](https://github.com/abrinsmead/skills) | [2026-07-08 15:10 UTC](https://github.com/abrinsmead/skills/commit/b543d21bf249a4fe504a90a63e39c51005afbf15) | `omp plugin install visual-code-reviewer@clssck-skills` |
 
 ## Tracked repositories
@@ -37,7 +38,6 @@ omp plugin marketplace update clssck-skills
 - [shadcn/improve](https://github.com/shadcn/improve)
 - [abrinsmead/skills](https://github.com/abrinsmead/skills)
 - [kunchenguid/lavish-axi](https://github.com/kunchenguid/lavish-axi)
-- [clssck/bro](https://github.com/clssck/bro)
 
 ## Add a GitHub skill
 

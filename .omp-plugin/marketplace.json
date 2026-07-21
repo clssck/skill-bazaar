@@ -8,13 +8,30 @@
   },
   "plugins": [
     {
+      "name": "bro",
+      "version": "1.1.0",
+      "source": "./plugins/bro",
+      "description": "Restate the assistant's previous response in plain, concise language.",
+      "author": {
+        "name": "clssck"
+      },
+      "homepage": "https://github.com/clssck/skill-bazaar/tree/main/plugins/bro",
+      "repository": "https://github.com/clssck/skill-bazaar",
+      "license": "MIT",
+      "tags": [
+        "plain-language",
+        "rewrite",
+        "command"
+      ]
+    },
+    {
       "name": "emilkowalski-skills",
-      "version": "1.0.0",
+      "version": "1.0.1784634297",
       "source": {
         "source": "github",
         "repo": "emilkowalski/skills",
         "ref": "main",
-        "sha": "6bf24434f7730ad169077756cf9c7cd7bd675fc6"
+        "sha": "f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb"
       },
       "description": "Skills for Design Engineers.",
       "author": {
@@ -115,28 +132,6 @@
         "html",
         "review",
         "collaboration"
-      ]
-    },
-    {
-      "name": "bro",
-      "version": "1.0.1784583659",
-      "source": {
-        "source": "github",
-        "repo": "clssck/bro",
-        "ref": "main",
-        "sha": "41d86da87ba68b2657ad040c9580f6e2b5dba802"
-      },
-      "description": "Restate the assistant's previous response in plain, concise language.",
-      "author": {
-        "name": "clssck"
-      },
-      "homepage": "https://github.com/clssck/bro",
-      "repository": "https://github.com/clssck/bro",
-      "license": "MIT",
-      "tags": [
-        "plain-language",
-        "rewrite",
-        "command"
       ]
     }
   ]
