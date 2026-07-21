@@ -6,11 +6,14 @@
     },
     "description": "A curated OMP bazaar linking skills straight from their makers"
   },
+  "repository": "clssck/skill-bazaar",
+  "localPlugins": [
+    "plugins/bro"
+  ],
   "repositories": [
     "https://github.com/emilkowalski/skills",
     "https://github.com/shadcn/improve",
     "https://github.com/abrinsmead/skills",
-    "https://github.com/kunchenguid/lavish-axi",
-    "https://github.com/clssck/bro"
+    "https://github.com/kunchenguid/lavish-axi"
   ]
 }

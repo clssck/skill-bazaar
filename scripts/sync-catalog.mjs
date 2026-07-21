@@ -43,6 +43,17 @@ function parseGitHubRepository(value) {
   return `${parts[0]}/${parts[1]}`;
 }
 
+function normalizeLocalPluginPath(value) {
+  if (typeof value !== "string" || !value.trim() || value.includes("\\") || value.includes("\0")) {
+    throw new Error(`Expected a safe relative local plugin path, received ${JSON.stringify(value)}`);
+  }
+  const normalized = posix.normalize(value.trim().replace(/^\.\/+/, "")).replace(/\/+$/, "");
+  if (!normalized || normalized === "." || posix.isAbsolute(normalized) || normalized.startsWith("../")) {
+    throw new Error(`Local plugin path must stay inside the bazaar: ${JSON.stringify(value)}`);
+  }
+  return normalized;
+}
+
 function slug(value) {
   return value
     .toLowerCase()
@@ -167,6 +178,7 @@ function catalogSource(context, subdirectory = "") {
 }
 
 function sourceIdentity(source) {
+  if (typeof source === "string") return `local#${source}`;
   if (source?.source === "github") return `${source.repo}#${source.path ?? ""}`;
   if (source?.source === "git-subdir") return `${parseGitHubRepository(source.url)}#${source.path}`;
   if (source?.source === "url") return `${parseGitHubRepository(source.url)}#`;
@@ -180,6 +192,7 @@ function previousEntryFor(name, context, subdirectory = "") {
 }
 
 function sourceRepositorySlug(source) {
+  if (typeof source === "string") return "local";
   if (source?.source === "github") return slug(source.repo);
   if (source?.source === "git-subdir" || source?.source === "url") {
     return slug(parseGitHubRepository(source.url));
@@ -276,7 +289,14 @@ function pathIsInside(path, directory) {
   return directory === "" || path === directory || path.startsWith(`${directory}/`);
 }
 
-async function recordPluginSkills(plugin, context, subdirectory = "", manifest = null, explicitSkills) {
+async function recordPluginSkills(
+  plugin,
+  context,
+  subdirectory = "",
+  manifest = null,
+  explicitSkills,
+  recordMetadata = {},
+) {
   const roots = new Set([posix.join(subdirectory, "skills")]);
   const declared = explicitSkills === undefined
     ? declaredSkillPaths(manifest)
@@ -294,7 +314,7 @@ async function recordPluginSkills(plugin, context, subdirectory = "", manifest =
     seen.add(entry.path);
     const fallback = posix.basename(posix.dirname(entry.path));
     const frontmatter = parseSkillFrontmatter((await readBlob(context, entry.sha)).toString("utf8"), fallback);
-    skillRecords.push({ plugin, context, skillPath: entry.path, name: frontmatter.name });
+    skillRecords.push({ plugin, context, skillPath: entry.path, name: frontmatter.name, ...recordMetadata });
   }
 }
 
@@ -309,6 +329,28 @@ async function directRepositoryPlugin(context) {
     ...pluginMetadata({ manifest, context }),
   };
   await recordPluginSkills(plugin, context, "", manifest);
+  return plugin;
+}
+
+async function localRepositoryPlugin(context, value) {
+  const directory = normalizeLocalPluginPath(value);
+  const manifest = await pluginManifest(context, directory);
+  if (!manifest) throw new Error(`Local plugin ${directory} has no plugin manifest`);
+  if (typeof manifest.version !== "string") {
+    throw new Error(`Local plugin ${directory} must declare a semantic version`);
+  }
+  parseVersion(manifest.version);
+  const rawName = manifest.name ?? posix.basename(directory);
+  if (typeof rawName !== "string" || !slug(rawName)) {
+    throw new Error(`Local plugin ${directory} has no valid plugin name`);
+  }
+  const plugin = {
+    name: slug(rawName),
+    version: manifest.version,
+    source: `./${directory}`,
+    ...pluginMetadata({ manifest, context }),
+  };
+  await recordPluginSkills(plugin, context, directory, manifest, undefined, { linkToLastCommit: true });
   return plugin;
 }
 
@@ -380,7 +422,7 @@ function renderReadme(sources, rows) {
     "",
     sources.marketplace.description,
     "",
-    "This marketplace links GitHub-hosted skills directly from their owners, pins immutable commits, and regenerates this index daily.",
+    "This marketplace hosts its own small plugins and links external skills directly from their owners. External sources are pinned to immutable commits, and this index is regenerated daily.",
     "",
     "## Install",
     "",
@@ -391,14 +433,15 @@ function renderReadme(sources, rows) {
     "",
     "## Available skills",
     "",
-    `${rows.length} skills across ${new Set(rows.map(row => row.plugin.name)).size} plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the catalog's pinned commit.`,
+    `${rows.length} skills across ${new Set(rows.map(row => row.plugin.name)).size} plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the source commit used to build the catalog.`,
     "",
     "| Skill | Plugin | Repository | Last updated | Install |",
     "| --- | --- | --- | --- | --- |",
   ];
 
   for (const row of rows) {
-    const skillUrl = `https://github.com/${row.context.repo}/blob/${row.context.sha}/${row.skillPath}`;
+    const skillRevision = row.linkToLastCommit ? row.lastCommit.sha : row.context.sha;
+    const skillUrl = `https://github.com/${row.context.repo}/blob/${skillRevision}/${row.skillPath}`;
     const commitUrl = `https://github.com/${row.context.repo}/commit/${row.lastCommit.sha}`;
     lines.push(
       `| [${row.name}](${skillUrl}) | \`${row.plugin.name}\` | [${row.context.repo}](${row.context.metadata.html_url}) | [${formatUtc(row.lastCommit.date)}](${commitUrl}) | \`omp plugin install ${row.plugin.name}@${sources.marketplace.name}\` |`,
@@ -436,6 +479,19 @@ try {
   if (error?.code !== "ENOENT") throw error;
 }
 const plugins = [];
+
+const localPluginPaths = sources.localPlugins ?? [];
+if (!Array.isArray(localPluginPaths)) throw new Error("sources.localPlugins must be an array");
+if (localPluginPaths.length > 0) {
+  const localContext = await repositoryContext(parseGitHubRepository(sources.repository));
+  const seen = new Set();
+  for (const value of localPluginPaths) {
+    const directory = normalizeLocalPluginPath(value);
+    if (seen.has(directory)) throw new Error(`Duplicate local plugin path: ${directory}`);
+    seen.add(directory);
+    plugins.push(await localRepositoryPlugin(localContext, directory));
+  }
+}
 
 for (const repository of sources.repositories) {
   const repo = parseGitHubRepository(repository);
