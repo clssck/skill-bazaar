@@ -26,12 +26,12 @@
     },
     {
       "name": "emilkowalski-skills",
-      "version": "1.0.1784634297",
+      "version": "1.0.1784793617",
       "source": {
         "source": "github",
         "repo": "emilkowalski/skills",
         "ref": "main",
-        "sha": "f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb"
+        "sha": "e695d13cb298db0f46d5ef05be2ad13fa12908a6"
       },
       "description": "Skills for Design Engineers.",
       "author": {
@@ -111,12 +111,12 @@
     },
     {
       "name": "lavish-axi",
-      "version": "0.1.1784695679",
+      "version": "0.1.1784790047",
       "source": {
         "source": "github",
         "repo": "kunchenguid/lavish-axi",
         "ref": "main",
-        "sha": "966f4d58f769b0ceab5a8baf49982dba0fde4769"
+        "sha": "f5a1ecb8e32cfa7eb61bc7c713befd99b180e121"
       },
       "description": "HTML is the new markdown. Lavish is the new editor for your HTML artifacts.",
       "author": {
