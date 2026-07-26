@@ -15,7 +15,7 @@ omp plugin marketplace update clssck-skills
 
 ## Available skills
 
-12 skills across 6 plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the source commit used to build the catalog.
+10 skills across 4 plugins. “Last updated” is the newest commit that touched that skill's directory, evaluated at the source commit used to build the catalog.
 
 | Skill | Plugin | Repository | Last updated | Install |
 | --- | --- | --- | --- | --- |
@@ -27,16 +27,13 @@ omp plugin marketplace update clssck-skills
 | [improve](https://github.com/shadcn/improve/blob/03369ee6d7cafbfcecc4346539b05b3dc0a603bb/skills/improve/SKILL.md) | `improve` | [shadcn/improve](https://github.com/shadcn/improve) | [2026-06-15 06:15 UTC](https://github.com/shadcn/improve/commit/bd0aff9ca6b5f195ad3dca54a96e3368c65dab67) | `omp plugin install improve@clssck-skills` |
 | [improve-animations](https://github.com/emilkowalski/skills/blob/e695d13cb298db0f46d5ef05be2ad13fa12908a6/skills/improve-animations/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 10:44 UTC](https://github.com/emilkowalski/skills/commit/86cf9f7d91c6de0215cbb2e36fccfe6c8127a841) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [lavish](https://github.com/kunchenguid/lavish-axi/blob/50b0facb61b5fc36cb1737e33b20d2894a64323b/skills/lavish/SKILL.md) | `lavish-axi` | [kunchenguid/lavish-axi](https://github.com/kunchenguid/lavish-axi) | [2026-07-14 20:53 UTC](https://github.com/kunchenguid/lavish-axi/commit/55045850f61e7b23c8dbf8cc30d92bd6e31649d2) | `omp plugin install lavish-axi@clssck-skills` |
-| [mermaid-viewer](https://github.com/abrinsmead/skills/blob/b543d21bf249a4fe504a90a63e39c51005afbf15/mermaid-viewer/SKILL.md) | `mermaid-viewer` | [abrinsmead/skills](https://github.com/abrinsmead/skills) | [2026-07-06 00:41 UTC](https://github.com/abrinsmead/skills/commit/384051e3a69737c4477f0e92fb20cc19d05a8e35) | `omp plugin install mermaid-viewer@clssck-skills` |
 | [pick-ui-library](https://github.com/emilkowalski/skills/blob/e695d13cb298db0f46d5ef05be2ad13fa12908a6/skills/pick-ui-library/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 11:44 UTC](https://github.com/emilkowalski/skills/commit/f6f79ca1d8e9e2d82c8b90d7481b70ca66f4adfb) | `omp plugin install emilkowalski-skills@clssck-skills` |
 | [review-animations](https://github.com/emilkowalski/skills/blob/e695d13cb298db0f46d5ef05be2ad13fa12908a6/skills/review-animations/SKILL.md) | `emilkowalski-skills` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | [2026-07-21 10:44 UTC](https://github.com/emilkowalski/skills/commit/86cf9f7d91c6de0215cbb2e36fccfe6c8127a841) | `omp plugin install emilkowalski-skills@clssck-skills` |
-| [visual-code-reviewer](https://github.com/abrinsmead/skills/blob/b543d21bf249a4fe504a90a63e39c51005afbf15/visual-code-reviewer/SKILL.md) | `visual-code-reviewer` | [abrinsmead/skills](https://github.com/abrinsmead/skills) | [2026-07-08 15:10 UTC](https://github.com/abrinsmead/skills/commit/b543d21bf249a4fe504a90a63e39c51005afbf15) | `omp plugin install visual-code-reviewer@clssck-skills` |
 
 ## Tracked repositories
 
 - [emilkowalski/skills](https://github.com/emilkowalski/skills)
 - [shadcn/improve](https://github.com/shadcn/improve)
-- [abrinsmead/skills](https://github.com/abrinsmead/skills)
 - [kunchenguid/lavish-axi](https://github.com/kunchenguid/lavish-axi)
 
 ## Add a GitHub skill
