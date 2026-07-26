@@ -1,0 +1,88 @@
+# Declarative Sharing Manifest Template
+# 
+# Replace placeholders (<...>) with actual values.
+# Include only the object types you're sharing.
+#
+# Documentation: https://docs.snowflake.com/en/developer-guide/declarative-sharing/manifest-reference
+# IMPORTANT: manifest filename should always be named manifest.yml not manifest-example.yml
+# NOTE: Do NOT include manifest_version — it is auto-added on release.
+
+# Roles control consumer access to shared content
+roles:
+  - app_user:
+      comment: "Read-only access to views and notebooks"
+  - app_admin:
+      comment: "Full access to all shared objects"
+
+shared_content:
+  # required_databases — Almost always OMIT this.
+  # Only needed when a shared view's expansion references tables in a DIFFERENT
+  # database not already in shared_content/databases. This tells Snowflake to
+  # replicate that external database in cross-region scenarios.
+  # This is NOT where you list the databases you're sharing — that's what
+  # shared_content/databases is for.
+  # required_databases:
+  #   - external_db_referenced_by_views
+  databases:
+    - <DATABASE>:
+        schemas:
+          # SHARED-BY-COPY: agents, functions, procedures
+          - <SHARED_BY_COPY_SCHEMA>:
+              roles: [app_user, app_admin]
+              
+              cortex_agents:
+                - <AGENT_NAME>:
+                    roles: [app_admin]
+              
+              functions:
+                - <FUNCTION_NAME>(<PARAM_TYPES>):
+                    roles: [app_admin]
+              
+              procedures:
+                - <PROCEDURE_NAME>(<PARAM_TYPES>):
+                    roles: [app_admin]
+
+          # SHARED-BY-REFERENCE: tables, views, semantic views, search services
+          - <SHARED_BY_REFERENCE_SCHEMA>:
+              roles: [app_user, app_admin]
+              
+              tables:
+                - <TABLE_NAME>:
+                    roles: [app_admin]          # Restricted to app_admin
+                - <ICEBERG_TABLE_NAME>:
+                    roles: [app_admin]
+                - <DYNAMIC_TABLE_NAME>:
+                    roles: [app_admin]
+              
+              views:
+                - <VIEW_NAME>:
+                    roles: [app_user, app_admin] # Accessible to all roles
+              
+              semantic_views:
+                - <SEMANTIC_VIEW_NAME>:
+                    roles: [app_user, app_admin]
+              
+              cortex_search_services:
+                - <SEARCH_SERVICE_NAME>:
+                    roles: [app_user, app_admin]
+
+# Notebooks go in application_content (separate from shared_content)
+application_content:
+  notebooks:
+    - <NOTEBOOK_NAME>:
+        main_file: <NOTEBOOK_NAME>.ipynb
+        comment: "Description of notebook purpose"
+        runtime_environment_version: stable
+        roles: [app_user, app_admin]
+
+# Key Points:
+# 1. Separate shared-by-copy and shared-by-reference objects into different schemas
+# 2. Include parameter types for functions/procedures: my_func(VARCHAR, NUMBER)
+# 3. Include ALL dependencies referenced by agents or other objects
+# 4. Dynamic tables, iceberg tables, and all other table-like objects fall under the tables section
+# 5. Notebooks use application_content (not shared_content) - they're bundled with the app
+# 6. CRITICAL: When creating Cortex Agents with Analyst tools, you MUST specify
+#    execution_environment with warehouse: "" (empty string) in tool_resources - agents will fail without this!
+#    Do NOT use an actual warehouse name.
+# 7. Per-object roles must be a subset of the parent schema's roles
+# 8. Omitting roles (or roles: []) on an object restricts it to app owners only

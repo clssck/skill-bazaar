@@ -1,0 +1,10 @@
+[project]
+name = "semantic-view-skills"
+version = "0.1.0"
+description = "Semantic View Skills for Cortex"
+requires-python = ">=3.11"
+dependencies = [
+    "snowflake-connector-python[secure-local-storage]>=3.0.0",
+    "pyyaml>=6.0.2,<7",
+    "sqlglot[rs]>=27.16.3",
+]

@@ -1,0 +1,47 @@
+[project]
+name = "cortex-agent"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "gepa>=0.0.17",
+    "google-api-python-client>=2.187.0",
+    "google-auth>=2.43.0",
+    "langchain",
+    "numba",
+    "openai>=1.109.1",
+    "optuna",
+    "pandas>=2.3.3",
+    "plotly>=6.3.1",
+    "pypdf",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.5",
+    "snowflake-connector-python>=3.0.0",
+    "snowflake-snowpark-python>=1.40.0",
+    "streamlit>=1.50.0",
+    "trulens-connectors-snowflake>=2.4.0",
+    "trulens-core>=2.4.1",
+    "trulens-providers-cortex>=2.4.1",
+    "trulens-providers-openai>=2.4.1",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-timeout>=2.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["scripts/tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+
+[dependency-groups]
+dev = [
+    "fpdf2>=2.8.5",
+]
