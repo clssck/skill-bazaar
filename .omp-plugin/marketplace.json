@@ -936,6 +936,21 @@
       },
       "repository": "https://github.com/trailofbits/skills",
       "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "snowflake-labs-coco-skills",
+      "version": "1.0.1784155994",
+      "source": {
+        "source": "github",
+        "repo": "Snowflake-Labs/coco-skills",
+        "ref": "main",
+        "sha": "a80f61daefc1e87840a56d160e7248c894e40a51"
+      },
+      "description": "This is a curated collection of Agent Skills for Cortex Code (\"CoCo\") — Snowflake's CLI for building with AI.",
+      "author": {
+        "name": "Snowflake-Labs"
+      },
+      "repository": "https://github.com/Snowflake-Labs/coco-skills"
     }
   ]
 }
