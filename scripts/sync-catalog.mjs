@@ -297,16 +297,22 @@ async function recordPluginSkills(
   explicitSkills,
   recordMetadata = {},
 ) {
-  const roots = new Set([posix.join(subdirectory, "skills")]);
   const declared = explicitSkills === undefined
     ? declaredSkillPaths(manifest)
     : typeof explicitSkills === "string"
       ? [explicitSkills]
       : explicitSkills;
+  const roots = new Set();
   for (const path of declared ?? []) {
-    const relative = path.replace(/^\.\//, "");
-    roots.add(relative === "." ? subdirectory : posix.normalize(posix.join(subdirectory, relative)));
+    // Trailing slashes must go: pathIsInside compares against `${directory}/`, so a root of
+    // "skills/" would test startsWith("skills//") and match nothing.
+    const relative = path.replace(/^\.\//, "").replace(/\/+$/, "");
+    roots.add(relative === "" || relative === "." ? subdirectory : posix.normalize(posix.join(subdirectory, relative)));
   }
+  // Only fall back to the conventional skills/ directory when the manifest declares nothing.
+  // Seeding it unconditionally makes every plugin in a multi-plugin marketplace enumerate the
+  // repository's entire skills tree, duplicating each skill once per plugin.
+  if (roots.size === 0) roots.add(posix.join(subdirectory, "skills"));
 
   const seen = new Set();
   for (const entry of context.files.filter(file => /(^|\/)SKILL\.md$/.test(file.path))) {
