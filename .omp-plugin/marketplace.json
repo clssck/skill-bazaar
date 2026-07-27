@@ -26,12 +26,12 @@
     },
     {
       "name": "emilkowalski-skills",
-      "version": "1.0.1784793617",
+      "version": "1.0.1785151868",
       "source": {
         "source": "github",
         "repo": "emilkowalski/skills",
         "ref": "main",
-        "sha": "e695d13cb298db0f46d5ef05be2ad13fa12908a6"
+        "sha": "70744e3816f1d93eafb697161a8b880a7384c5ff"
       },
       "description": "Skills for Design Engineers.",
       "author": {
@@ -89,6 +89,853 @@
         "review",
         "collaboration"
       ]
+    },
+    {
+      "name": "document-skills",
+      "version": "1.0.1784923954",
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills",
+        "ref": "main",
+        "sha": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb"
+      },
+      "skills": [
+        "./skills/xlsx",
+        "./skills/docx",
+        "./skills/pptx",
+        "./skills/pdf"
+      ],
+      "description": "Collection of document processing suite including Excel, Word, PowerPoint, and PDF capabilities",
+      "author": {
+        "name": "anthropics"
+      },
+      "repository": "https://github.com/anthropics/skills"
+    },
+    {
+      "name": "example-skills",
+      "version": "1.0.1784923954",
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills",
+        "ref": "main",
+        "sha": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb"
+      },
+      "skills": [
+        "./skills/algorithmic-art",
+        "./skills/brand-guidelines",
+        "./skills/canvas-design",
+        "./skills/doc-coauthoring",
+        "./skills/frontend-design",
+        "./skills/internal-comms",
+        "./skills/mcp-builder",
+        "./skills/skill-creator",
+        "./skills/slack-gif-creator",
+        "./skills/theme-factory",
+        "./skills/web-artifacts-builder",
+        "./skills/webapp-testing"
+      ],
+      "description": "Collection of example skills demonstrating various capabilities including skill creation, MCP building, visual design, algorithmic art, internal communications, web testing, artifact building, Slack GIFs, and theme styling",
+      "author": {
+        "name": "anthropics"
+      },
+      "repository": "https://github.com/anthropics/skills"
+    },
+    {
+      "name": "claude-api",
+      "version": "1.0.1784923954",
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills",
+        "ref": "main",
+        "sha": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb"
+      },
+      "skills": [
+        "./skills/claude-api"
+      ],
+      "description": "Claude API and SDK documentation skill for building LLM-powered applications",
+      "author": {
+        "name": "anthropics"
+      },
+      "repository": "https://github.com/anthropics/skills"
+    },
+    {
+      "name": "hf-cli",
+      "version": "1.0.1784953891",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/huggingface/skills.git",
+        "path": "skills/hf-cli",
+        "ref": "main",
+        "sha": "87f9ee5b670a630b022809a8742606c6da21812c"
+      },
+      "skills": "./",
+      "description": "Execute Hugging Face Hub operations using the hf CLI. Install additional Hugging Face skills, discover agent resources, download models/datasets, upload files, manage repos, and run cloud compute jobs.",
+      "author": {
+        "name": "huggingface"
+      },
+      "repository": "https://github.com/huggingface/skills",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "gsap-skills",
+      "version": "1.0.1776815222",
+      "source": {
+        "source": "github",
+        "repo": "greensock/gsap-skills",
+        "ref": "main",
+        "sha": "aed9cfd3277740755f6bfc1155c7aa645403b760"
+      },
+      "description": "Official GSAP skills for Cursor, Claude and other AI agents, covering tweens, timelines, ScrollTrigger, plugins, utilities, React hooks, and performance optimization",
+      "author": {
+        "name": "GreenSock"
+      },
+      "repository": "https://github.com/greensock/gsap-skills",
+      "license": "MIT",
+      "category": "productivity"
+    },
+    {
+      "name": "obsidian",
+      "version": "1.0.1780935121",
+      "source": {
+        "source": "github",
+        "repo": "kepano/obsidian-skills",
+        "ref": "main",
+        "sha": "a1dc48e68138490d522c04cbf5822214c6eb1202"
+      },
+      "description": "Claude Skills for Obsidian",
+      "author": {
+        "name": "Steph Ango"
+      },
+      "repository": "https://github.com/kepano/obsidian-skills",
+      "license": "MIT",
+      "tags": [
+        "obsidian",
+        "markdown",
+        "bases",
+        "canvas",
+        "pkm",
+        "notes"
+      ]
+    },
+    {
+      "name": "ask-questions-if-underspecified",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/ask-questions-if-underspecified",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Clarify ambiguous requirements by asking questions before implementing. Only when invoked explicitly.",
+      "author": {
+        "name": "Kevin Valerio",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "audit-context-building",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/audit-context-building",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Build deep architectural context through ultra-granular code analysis before vulnerability hunting",
+      "author": {
+        "name": "Omar Inuwa"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "building-secure-contracts",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/building-secure-contracts",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Comprehensive smart contract security toolkit based on Trail of Bits' Building Secure Contracts framework. Includes vulnerability scanners for 6 blockchains and 5 development guideline assistants.",
+      "author": {
+        "name": "Omar Inuwa && Paweł Płatek"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "burpsuite-project-parser",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/burpsuite-project-parser",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Search and extract data from Burp Suite project files (.burp) for security analysis",
+      "author": {
+        "name": "Will Vandevanter"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "claude-in-chrome-troubleshooting",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/claude-in-chrome-troubleshooting",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Diagnose and fix Claude in Chrome MCP extension connectivity issues",
+      "author": {
+        "name": "Dan Guido"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "constant-time-analysis",
+      "version": "0.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/constant-time-analysis",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Detect compiler-induced timing side-channels in cryptographic code",
+      "author": {
+        "name": "Scott Arciszewski",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "culture-index",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/culture-index",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Interprets Culture Index survey results for individuals and teams",
+      "author": {
+        "name": "Dan Guido"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "debug-buttercup",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/debug-buttercup",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Debug Buttercup Kubernetes deployments",
+      "author": {
+        "name": "Ronald Eytchison",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "devcontainer-setup",
+      "version": "0.2.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/devcontainer-setup",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Create pre-configured devcontainers with Claude Code and language-specific tooling",
+      "author": {
+        "name": "Alexis Challande"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "differential-review",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/differential-review",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Security-focused differential review of code changes with git history analysis and blast radius estimation",
+      "author": {
+        "name": "Omar Inuwa"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "firebase-apk-scanner",
+      "version": "2.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/firebase-apk-scanner",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Scan Android APKs for Firebase security misconfigurations including open databases, storage buckets, authentication issues, and exposed cloud functions. For authorized security research only.",
+      "author": {
+        "name": "Nick Sellier"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "gh-cli",
+      "version": "1.5.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/gh-cli",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Intercepts GitHub URL fetches and curl/wget commands, redirecting to the authenticated gh CLI.",
+      "author": {
+        "name": "William Tan",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "dwarf-expert",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/dwarf-expert",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Interact with and understand the DWARF debugging format",
+      "author": {
+        "name": "Evan Hellman",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "entry-point-analyzer",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/entry-point-analyzer",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Analyzes smart contract codebases to identify state-changing entry points for security auditing. Detects externally callable functions that modify state, categorizes them by access level, and generates structured audit reports.",
+      "author": {
+        "name": "Nicolas Donboly",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "mutation-testing",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/mutation-testing",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Configures mewt or muton mutation testing campaigns — scopes targets, tunes timeouts, and optimizes long-running runs. Use when the user mentions mewt, muton, mutation testing, or wants to configure or optimize a mutation testing campaign.",
+      "author": {
+        "name": "Trail of Bits",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "property-based-testing",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/property-based-testing",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Property-based testing guidance for multiple languages and smart contracts",
+      "author": {
+        "name": "Henrik Brodin",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "semgrep-rule-creator",
+      "version": "1.2.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/semgrep-rule-creator",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Create custom Semgrep rules for detecting bug patterns and security vulnerabilities",
+      "author": {
+        "name": "Maciej Domanski"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "semgrep-rule-variant-creator",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/semgrep-rule-variant-creator",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Creates language variants of existing Semgrep rules with proper applicability analysis and test-driven validation",
+      "author": {
+        "name": "Maciej Domanski",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "sharp-edges",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/sharp-edges",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Identify error-prone APIs, dangerous configurations, and footgun designs that enable security mistakes",
+      "author": {
+        "name": "Scott Arciszewski",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "static-analysis",
+      "version": "1.2.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/static-analysis",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Static analysis toolkit with CodeQL, Semgrep, and SARIF parsing for security vulnerability detection",
+      "author": {
+        "name": "Axel Mierczuk & Paweł Płatek"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "spec-to-code-compliance",
+      "version": "1.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/spec-to-code-compliance",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Specification-to-code compliance checker for blockchain audits with evidence-based alignment analysis",
+      "author": {
+        "name": "Omar Inuwa"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "testing-handbook-skills",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/testing-handbook-skills",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Skills from the Trail of Bits Application Security Testing Handbook (appsec.guide)",
+      "author": {
+        "name": "Paweł Płatek"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "trailmark",
+      "version": "0.8.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/trailmark",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Builds multi-language source code graphs for security analysis: call graphs, attack surface mapping, blast radius, taint propagation, complexity hotspots, and entry point enumeration. Generates Mermaid diagrams (call graphs, class hierarchies, dependency maps, heatmaps). Compares code graph snapshots for structural diff and evolution analysis. Runs graph-informed mutation testing triage (genotoxic). Generates mutation-driven test vectors (vector-forge). Extracts crypto protocol message flows and converts Mermaid diagrams to ProVerif models. Projects SARIF and weAudit findings onto code graphs. Use when analyzing call paths, mapping attack surface, visualizing code architecture, triaging survived mutants, generating cryptographic test vectors, diagramming crypto protocols, formally verifying protocols, or augmenting audits with static analysis findings.",
+      "author": {
+        "name": "Scott Arciszewski"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "variant-analysis",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/variant-analysis",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Find similar vulnerabilities and bugs across codebases using pattern-based analysis",
+      "author": {
+        "name": "Axel Mierczuk"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "c-review",
+      "version": "1.2.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/c-review",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Comprehensive C/C++ security code review with specialized bug-finding agents covering memory safety, type safety, concurrency, and Linux/Windows userspace-specific issues",
+      "author": {
+        "name": "Paweł Płatek"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0",
+      "tags": [
+        "c",
+        "cpp",
+        "security",
+        "code-review",
+        "static-analysis",
+        "vulnerabilities",
+        "linux",
+        "macos",
+        "posix",
+        "windows"
+      ]
+    },
+    {
+      "name": "rust-review",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/rust-review",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Comprehensive Rust security code review with specialized bug-finding agents covering the safe/unsafe boundary, memory safety in unsafe blocks, concurrency, panic-induced DoS, recursion-induced stack overflow, FFI, and async runtime hazards",
+      "author": {
+        "name": "Andrea Cappa (Aptos Labs) & Paweł Płatek (Trail of Bits)"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0",
+      "tags": [
+        "rust",
+        "security",
+        "code-review",
+        "static-analysis",
+        "unsafe",
+        "ffi",
+        "concurrency",
+        "async",
+        "memory-safety"
+      ]
+    },
+    {
+      "name": "modern-python",
+      "version": "1.5.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/modern-python",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Modern Python best practices. Use when creating new Python projects, and writing Python scripts, or migrating existing projects from legacy tools.",
+      "author": {
+        "name": "William Tan",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "insecure-defaults",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/insecure-defaults",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Detects insecure default configurations including hardcoded credentials, fallback secrets, weak authentication defaults, and dangerous values in production",
+      "author": {
+        "name": "Trail of Bits",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "second-opinion",
+      "version": "1.7.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/second-opinion",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Runs code reviews using external LLM CLIs (OpenAI Codex, Google Gemini) on uncommitted changes, branch diffs, or specific commits. Bundles Codex's built-in MCP server for direct tool access.",
+      "author": {
+        "name": "Dan Guido"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "yara-authoring",
+      "version": "2.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/yara-authoring",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "YARA-X detection rule authoring with linting and quality analysis",
+      "author": {
+        "name": "Trail of Bits",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "git-cleanup",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/git-cleanup",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Safely analyzes and cleans up local git branches and worktrees by categorizing them as merged, squash-merged, superseded, or active work.",
+      "author": {
+        "name": "Henrik Brodin",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "workflow-skill-design",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/workflow-skill-design",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Teaches design patterns for workflow-based Claude Code skills and provides a review agent for auditing existing skills",
+      "author": {
+        "name": "Benjamin Samuels",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "seatbelt-sandboxer",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/seatbelt-sandboxer",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Generate minimal macOS Seatbelt sandbox configurations for applications",
+      "author": {
+        "name": "Spencer Michaels"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "supply-chain-risk-auditor",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/supply-chain-risk-auditor",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Audit supply-chain threat landscape of project dependencies for exploitation or takeover risk",
+      "author": {
+        "name": "Spencer Michaels"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "zeroize-audit",
+      "version": "0.1.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/zeroize-audit",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Detects missing or compiler-optimized zeroization of sensitive data with assembly and control-flow analysis",
+      "author": {
+        "name": "Trail of Bits",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "let-fate-decide",
+      "version": "1.2.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/let-fate-decide",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Draws the 12 Houses of the Zodiac Tarot spread using cryptographic randomness to add 100+ bits of entropy to vague or underspecified planning. Interprets the spread to guide next steps. Use when feeling lucky, invoking heart-of-the-cards energy, or when prompts are ambiguous.",
+      "author": {
+        "name": "Scott Arciszewski"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "agentic-actions-auditor",
+      "version": "1.2.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/agentic-actions-auditor",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations (Claude Code Action, Gemini CLI, OpenAI Codex, GitHub AI Inference)",
+      "author": {
+        "name": "Emilio López & Will Vandevanter"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "skill-improver",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/skill-improver",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Automatically reviews and fixes Claude Code skills through iterative refinement until they meet quality standards. Requires plugin-dev plugin.",
+      "author": {
+        "name": "Paweł Płatek"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "fp-check",
+      "version": "1.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/fp-check",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Systematic false positive verification for security bug analysis with mandatory gate reviews",
+      "author": {
+        "name": "Maciej Domanski"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "dimensional-analysis",
+      "version": "3.0.1782832486",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/dimensional-analysis",
+        "ref": "main",
+        "sha": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af"
+      },
+      "description": "Annotates codebases with dimensional analysis comments documenting units, dimensions, and decimal scaling. Use when someone asks to annotate units in a codebase, perform a dimensional analysis, or find vulnerabilities in a DeFi protocol. Prevents dimensional mismatches and catches formula bugs early.",
+      "author": {
+        "name": "Coriolan Pinhas & Benjamin Samuels",
+        "email": "opensource@trailofbits.com"
+      },
+      "repository": "https://github.com/trailofbits/skills",
+      "license": "CC-BY-SA-4.0"
     }
   ]
 }
