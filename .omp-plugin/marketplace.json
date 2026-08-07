@@ -67,12 +67,12 @@
     },
     {
       "name": "lavish-axi",
-      "version": "0.1.1785539192",
+      "version": "0.1.1786074020",
       "source": {
         "source": "github",
         "repo": "kunchenguid/lavish-axi",
         "ref": "main",
-        "sha": "7c64184adce8b2b18c1cb072779305303b8079d9"
+        "sha": "542819086b799d907e7eddf0a1fadd2eb60c3dfe"
       },
       "description": "HTML is the new markdown. Lavish is the new editor for your HTML artifacts.",
       "author": {
@@ -160,13 +160,13 @@
     },
     {
       "name": "hf-cli",
-      "version": "1.0.1785783276",
+      "version": "1.0.1786009461",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/huggingface/skills.git",
         "path": "skills/hf-cli",
         "ref": "main",
-        "sha": "32f8bb0928e95fc9d47ca9fbf69cbfbaf2bc2bda"
+        "sha": "7cb53d7a4746289db435c14fd7d7096965266b10"
       },
       "skills": "./",
       "description": "Execute Hugging Face Hub operations using the hf CLI. Install additional Hugging Face skills, discover agent resources, download models/datasets, upload files, manage repos, and run cloud compute jobs.",
@@ -922,12 +922,12 @@
     },
     {
       "name": "snowflake-labs-coco-skills",
-      "version": "1.0.1784155994",
+      "version": "1.0.1786026658",
       "source": {
         "source": "github",
         "repo": "Snowflake-Labs/coco-skills",
         "ref": "main",
-        "sha": "a80f61daefc1e87840a56d160e7248c894e40a51"
+        "sha": "f485873cfe7843e4c299f3671e41779ecb13f47a"
       },
       "description": "This is a curated collection of Agent Skills for Cortex Code (\"CoCo\") — Snowflake's CLI for building with AI.",
       "author": {
